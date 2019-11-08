@@ -79,6 +79,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'phonebook',
+        "TEST":{
+            "NAME": "phonebook_test"
+        }
     }
 }
 
