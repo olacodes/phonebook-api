@@ -1,7 +1,9 @@
 # project files
 venv
 db.local
+__pycache__
 
 # hidden files
 .vscode
 .DS_Store
+./__pycache__
