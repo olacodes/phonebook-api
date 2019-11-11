@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'phonebook',
         "HOST": 'localhost:27017',
-        "HOST": 'db',
+        # "HOST": 'db',
         "TEST":{
             "NAME": "phonebook_test"
         }
