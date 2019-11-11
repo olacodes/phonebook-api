@@ -79,8 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'phonebook',
-        # "HOST": 'localhost:27017',
-        # "HOST": 'db',
+        "HOST": 'http://127.0.0.1:27017',
         "TEST":{
             "NAME": "phonebook_test"
         }
