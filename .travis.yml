@@ -2,12 +2,24 @@ language: python
 python:
   - "3.6"
 
-install:
-  - pip install -r requirement.txt
+services:
+  - docker
+
+env:
+  - DOCKER_COMPOSE_VERSION=1.23.2
+
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
 before_script:
-  - cd src
-  - python manage.py migrate
+  - docker-compose up -d
+
 script:
-  - sleep 15
-  - cd src
-  - python manage.py test
+  - docker exec $(docker ps -q -l) python src/manage.py migrate
+  - docker exec $(docker ps -q -l) python src/manage.py test ./src
+
+after_script:
+  - docker-compose down
