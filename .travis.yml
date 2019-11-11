@@ -5,9 +5,7 @@ python:
 install:
   - pip install -r requirement.txt
 
-before_script:
-  - sleep 15
-
 script:
+  - sleep 15
   - cd src
   - python manage.py test
