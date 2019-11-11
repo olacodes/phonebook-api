@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'phonebook',
-        "HOST": 'mongodb://127.0.0.1:27017',
+        "HOST": 'mongodb://localhost:27017',
         "TEST":{
             "NAME": "phonebook_test"
         }
