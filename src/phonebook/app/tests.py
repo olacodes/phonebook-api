@@ -36,9 +36,7 @@ class GetPhonebook(APITestCase):
 
     def test_get_all(self):
         url = '/api/phonebook/'
-        # print(url)
         response = self.client.get(url)
-
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_get_one_phonebook(self):
@@ -63,7 +61,6 @@ class GetPhonebook(APITestCase):
         response = self.client.put(url, data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['lastname'], 'ola')
-        print(response.data)
 
     def test_delete_a_phonebook(self):
         url = '/api/phonebook/1/'
