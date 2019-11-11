@@ -4,7 +4,9 @@ python:
 
 install:
   - pip install -r requirement.txt
-
+before_script:
+  - cd src
+  - python manage.py migrate
 script:
   - sleep 15
   - cd src
